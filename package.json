@@ -7,6 +7,10 @@
     "build": "swift build --configuration=release --static-swift-stdlib && mv .build/release/desktop-capture .",
     "prepublish": "npm run build"
   },
+  "files": [
+    "index.js",
+    "desktop-capture"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vutran/desktop-capture.git"
