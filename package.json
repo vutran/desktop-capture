@@ -1,0 +1,20 @@
+{
+  "name": "desktop-capture",
+  "version": "0.0.0",
+  "description": "A description of this package.",
+  "main": "index.js",
+  "scripts": {
+    "build": "swift build --configuration=release --static-swift-stdlib && mv .build/release/desktop-capture .",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vutran/desktop-capture.git"
+  },
+  "author": "Vu Tran <vu@vu-tran.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vutran/desktop-capture/issues"
+  },
+  "homepage": "https://github.com/vutran/desktop-capture#readme"
+}
