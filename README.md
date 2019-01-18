@@ -12,11 +12,11 @@ $ npm i -S desktop-capture
 
 ## Usage
 
-````js
-const capture = require('desktop-capture');
+```js
+const capture = require("desktop-capture");
 
 capture().then(b64 => {
-	console.log(b64);
+  console.log(b64);
 });
 ```
 
@@ -53,4 +53,3 @@ $ swift test
 ## License
 
 MIT © [Vu Tran](https://github.com/vutran)
-````
