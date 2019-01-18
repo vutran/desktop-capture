@@ -1,6 +1,8 @@
 # desktop-capture
 
-A description of this package.
+> Capture a screenshot of the desktop as a base64 encoded string.
+
+_Note:_ This module only works for OS X.
 
 ## Install
 
