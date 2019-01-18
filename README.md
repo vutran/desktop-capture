@@ -18,6 +18,7 @@ const capture = require('desktop-capture');
 capture().then(b64 => {
 	console.log(b64);
 });
+```
 
 ## Build
 
@@ -26,7 +27,7 @@ With NPM:
 ```bash
 $ npm run build
 // -> ./desktop-capture
-````
+```
 
 With Swift:
 
@@ -52,3 +53,4 @@ $ swift test
 ## License
 
 MIT © [Vu Tran](https://github.com/vutran)
+````
