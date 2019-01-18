@@ -6,7 +6,7 @@ let cgImage: CGImage? = CGWindowListCreateImage(
 	screen,
 	CGWindowListOption.optionAll,
 	kCGNullWindowID,
-	CGWindowImageOption.bestResolution
+	CGWindowImageOption.nominalResolution
 )
 
 let rep: NSBitmapImageRep = NSBitmapImageRep.init(cgImage: cgImage!)
