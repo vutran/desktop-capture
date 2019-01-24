@@ -15,7 +15,13 @@ $ npm i -S desktop-capture
 ```js
 const capture = require("desktop-capture");
 
+// capture the main monitor
 capture().then(b64 => {
+  console.log(b64);
+});
+
+// capture a specific monitor (via screen ID)
+capture({ id: 12345 }).then(b64 => {
   console.log(b64);
 });
 ```

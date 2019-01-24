@@ -1,16 +1,33 @@
 import Cocoa
+import Foundation
 
-let screen = NSScreen.main!.frame
+let arguments = Array(CommandLine.arguments.dropFirst(1))
 
-let cgImage: CGImage? = CGWindowListCreateImage(
-	screen,
-	CGWindowListOption.optionAll,
-	kCGNullWindowID,
-	CGWindowImageOption.nominalResolution
-)
+var screen: NSScreen?
 
-let rep: NSBitmapImageRep = NSBitmapImageRep.init(cgImage: cgImage!)
+// Ensure we capture the specified screen via the CLI arg: `desktop-capture <screenId>`
+if arguments.count > 0 {
+    for s in NSScreen.screens {
+        let screenId = s.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as! NSNumber
+        if screenId.stringValue == arguments[0] {
+            screen = s
+        }
+    }
+} else {
+    screen = NSScreen.main!
+}
 
-let data: Data? = rep.representation(using: NSBitmapImageRep.FileType.png, properties: [:])
+if screen != nil {
+    let cgImage: CGImage? = CGWindowListCreateImage(
+        screen!.frame,
+        CGWindowListOption.optionAll,
+        kCGNullWindowID,
+        CGWindowImageOption.nominalResolution
+    )
 
-print("data:image/png;base64," + data!.base64EncodedString())
+    let rep: NSBitmapImageRep = NSBitmapImageRep.init(cgImage: cgImage!)
+
+    let data: Data? = rep.representation(using: NSBitmapImageRep.FileType.png, properties: [:])
+
+    print("data:image/png;base64," + data!.base64EncodedString())
+}
