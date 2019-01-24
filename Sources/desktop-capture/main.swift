@@ -2,7 +2,6 @@ import Cocoa
 import Foundation
 
 let arguments = Array(CommandLine.arguments.dropFirst(1))
-
 var screen: NSScreen?
 
 // Ensure we capture the specified screen via the CLI arg: `desktop-capture <screenId>`
