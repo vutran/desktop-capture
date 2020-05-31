@@ -26,7 +26,7 @@ capture({ id: 12345 }).then(b64 => {
 });
 
 // override the path to the bin directory
-capture({ overridePath: fixPathForAsarUnpack(__dirname) }).then(b64 => {
+capture({ overridePath: __dirname }).then(b64 => {
   console.log(b64);
 });
 ```
